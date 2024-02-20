@@ -1,5 +1,6 @@
 const Jimp = require("jimp");
 const Patient = require("../models/userModel");
+const { Buffer } = require("buffer");
 
 const test = async (req, res) => {
   res.send("Its working");
@@ -13,7 +14,7 @@ const createUser = async (req, res) => {
     const address = req.body.address;
     const eContact = req.body.emergencyContact;
     const eContact2 = req.body.emergencyContact2;
-    const base64String = req.body.image;
+    const imageBuffer = req.file.buffer; 
 
     const patient = new Patient({
       name: name,
@@ -22,7 +23,7 @@ const createUser = async (req, res) => {
       address: address,
       emergencyContact: eContact,
       emergencyContact2: eContact2,
-      image: base64String,
+      image: imageBuffer,
     });
 
     const newPatient = await patient.save();
@@ -32,8 +33,14 @@ const createUser = async (req, res) => {
   }
 };
 
+const findPatient = async (req,res) =>{
+
+}
+
+
 module.exports = {
   test,
   createUser,
+  findPatient,
 };
 

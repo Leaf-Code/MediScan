@@ -15,12 +15,9 @@ const patientSchema = new mongoose.Schema(
   }
 );
 
-const patientModel = mongoose.model("patients", patientSchema);
+const patientModel = mongoose.model("Patients", patientSchema);
 
-module.exports = {
-  patientModel,
-};
-
+module.exports = patientModel;
 
 // later work:
 // handle duplicate contact
