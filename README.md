@@ -6,12 +6,11 @@ MediScan is a healthcare platform designed to assist doctors in accessing patien
 
 ## Features
 
-Image Recognition: Utilizes advanced image processing techniques to recognize and extract relevant features from patient images or fingerprints.
-Secure Authentication: Implements robust authentication mechanisms to ensure only authorized doctors can access patient information.
-Data Privacy: Prioritizes patient data privacy and compliance with healthcare regulations, such as HIPAA (in the US) and GDPR (in the EU).
-Real-time Notifications: Provides doctors with real-time notifications for updates or new patient data.
-Mobile Access: Offers a mobile app version for convenient access to patient information on the go.
-Machine Learning Integration (Optional): Incorporates machine learning algorithms to enhance fingerprint matching accuracy or provide medical condition suggestions based on patient data.
+**Image Recognition:** Utilizes advanced image processing techniques to recognize and extract relevant features from patient images or fingerprints.  
+**Secure Authentication:** Implements robust authentication mechanisms to ensure only authorized doctors can access patient information.  
+**Data Privacy:** Prioritizes patient data privacy and compliance with healthcare regulations, such as HIPAA (in the US) and GDPR (in the EU).  
+**Real-time Notifications:** Provides doctors with real-time notifications for updates or new patient data.    
+**Machine Learning Integration:** Incorporates machine learning algorithms to enhance fingerprint matching accuracy or provide medical condition suggestions based on patient data.
 
 ## Tech Stack
 
