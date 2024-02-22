@@ -14,7 +14,7 @@ const createUser = async (req, res) => {
     const address = req.body.address;
     const eContact = req.body.emergencyContact;
     const eContact2 = req.body.emergencyContact2;
-    const imageBuffer = req.file.buffer; 
+    const imageBuffer = req.file.buffer;
 
     const patient = new Patient({
       name: name,
@@ -33,14 +33,39 @@ const createUser = async (req, res) => {
   }
 };
 
-const findPatient = async (req,res) =>{
+const findPatient = async (req, res) => {
+  try {
 
-}
+    const imageBuffer = req.file.buffer;
+    const uploadedImage = await Jimp.read(imageBuffer);
+    const patients = await Patient.find();
+    let matchingPatient = null;
 
+    for (const patient of patients) {
+      const storedImage = await Jimp.read(Buffer.from(patient.image, "base64"));
+      const distance = Jimp.distance(uploadedImage, storedImage);
+      const diff = Jimp.diff(uploadedImage, storedImage);
+
+      if (distance < 0.1 && diff.percent < 0.1) {
+        matchingPatient = patient;
+        break;
+      }
+    }
+
+    if (matchingPatient) {
+      const imageBase64 = matchingPatient.image.toString("base64");
+      matchingPatient.image = imageBase64;
+      res.json(matchingPatient);
+    } else {
+      res.status(404).json({ error: "No matching patient found" });
+    }
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
 
 module.exports = {
   test,
   createUser,
   findPatient,
 };
-

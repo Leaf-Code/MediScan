@@ -10,6 +10,10 @@ function Navbar() {
       <Link className="links" to="/createUser">
         Register
       </Link>
+
+      <Link className="links" to="/FindPatient">
+        Find 👨🏻‍💻
+      </Link>
     </nav>
   );
 }

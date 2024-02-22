@@ -38,12 +38,12 @@ function ResisterUser() {
       formData.append("emergencyContact2", emergencyContact2);
       formData.append("image", image);
 
-      const { data } = await axios.post("/createUser", formData, {
+      const { data } = await axios.post("/createUser", formData, { 
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-
+ 
       if (data.error) {
         toast.error(data.error);
       } else {
