@@ -42,17 +42,19 @@ export default function FindPatient() {
   };
 
   return (
-    <div>
+    <div className="find_Patient">
       <form onSubmit={find}>
         <br />
         <br />
-        <label>Patient image:</label>
+        <label style={{ fontSize: "20px" }} className="form-label">
+          Patient image:
+        </label>
         <input
+          className="form-input"
           type="file"
           onChange={(e) => setData({ image: e.target.files[0] })}
           required
         />
-
         <br />
         <br />
         <button type="submit">submit</button>

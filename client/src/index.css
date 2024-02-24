@@ -1,5 +1,6 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: "Gilroy";
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,6 +14,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/gilroy/Gilroy-Medium.ttf") format("truetype"),
+    url("./assets/gilroy/Gilroy-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,13 +31,13 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 h1 {
   font-size: 3.2em;
@@ -65,4 +74,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+}
