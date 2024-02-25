@@ -17,7 +17,7 @@ MediScan is a healthcare platform designed to assist doctors in accessing patien
 Frontend: React JS  
 Backend: Node.js with Express  
 Database: MongoDB  
-Image Processing: OpenCV  
+Image Processing: JIMP  
 
 ## Contributing
 
